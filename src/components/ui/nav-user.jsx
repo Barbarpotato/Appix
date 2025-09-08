@@ -1,14 +1,12 @@
 import {
-	IconCreditCard,
 	IconDotsVertical,
 	IconLogout,
 } from "@tabler/icons-react";
 import Image from "next/image";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
-	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { signOut, useSession } from "next-auth/react";
@@ -18,12 +16,11 @@ import {
 	SidebarMenuItem,
 	useSidebar,
 } from "@/components/ui/sidebar";
-import { Button } from "./ui/button";
-export function NavUser({ user }) {
-	const { data: session, status } = useSession();
-	const { isMobile } = useSidebar();
+import { Button } from "@/components/ui/button";
 
-	const imageUrl = session?.user?.image || user?.image; // fallback
+export function NavUser() {
+	const { data: session } = useSession();
+	const { isMobile } = useSidebar();
 
 	return (
 		<SidebarMenu>
@@ -67,7 +64,8 @@ export function NavUser({ user }) {
 						sideOffset={4}
 					>
 						<Button
-							className="w-full bg-sidebar-accent"
+							className="w-full"
+							variant="destructive"
 							onClick={() => signOut()}
 						>
 							<IconLogout />

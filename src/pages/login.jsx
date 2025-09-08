@@ -1,7 +1,7 @@
 import { signIn, useSession } from "next-auth/react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { useRouter } from "next/router";
-import Loader from "@/components/private/loader";
+import Loader from "@/components/ui/loader";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 

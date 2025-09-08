@@ -44,7 +44,7 @@ import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
 import { toast } from "sonner"
 import { z } from "zod"
 
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useIsMobile } from "@/hooks/useMobile"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
@@ -416,8 +416,8 @@ export function DataTable({
               {table
                 .getAllColumns()
                 .filter((column) =>
-                typeof column.accessorFn !== "undefined" &&
-                column.getCanHide())
+                  typeof column.accessorFn !== "undefined" &&
+                  column.getCanHide())
                 .map((column) => {
                   return (
                     <DropdownMenuCheckboxItem
